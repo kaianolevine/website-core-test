@@ -3,9 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prepare:core": "node ./node_modules/@wcs-mn/eleventy-excellent-core/scripts/prepare-core.mjs",
-    "dev": "npm run prepare:core && cross-env ELEVENTY_ENV=development eleventy --serve",
-    "build": "npm run prepare:core && cross-env ELEVENTY_ENV=production eleventy"
+    "dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
+    "build": "cross-env ELEVENTY_ENV=production eleventy"
   },
   "dependencies": {
     "@wcs-mn/eleventy-excellent-core": "github:wcs-mn/eleventy-excellent-core#main",
