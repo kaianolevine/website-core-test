@@ -1,30 +1,22 @@
-// Theme/core plugin
-import eleventyExcellentCore from "@wcs-mn/eleventy-excellent-core";
+import eleventyExcellentCore from '@wcs-mn/eleventy-excellent-core/plugin';
 
 export default async function (eleventyConfig) {
-  // Mount shared core (registers shared plugins/filters/shortcodes/build pipeline)
+  // Use the shared core plugin for all shared config, assets, layouts, includes, etc.
   eleventyConfig.addPlugin(eleventyExcellentCore, {
-    siteInputDir: "src",
-    outputDir: "dist",
-    enableBuildPipeline: true,
-    siteWebcComponents: ["./src/_includes/webc/**/*.webc"]
+    siteInputDir: 'src',
+    outputDir: 'dist'
   });
 
-  // Watch site assets/includes during dev
-  eleventyConfig.addWatchTarget("./src/assets/");
-  eleventyConfig.addWatchTarget("./src/_includes/");
-  eleventyConfig.addWatchTarget("./src/_layouts/");
-
-  // Site-only passthrough assets (widgets, etc.). Core assets are handled by the core plugin.
-  eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  // Optional: site-specific watch targets
+  eleventyConfig.addWatchTarget('./src/assets/');
 
   return {
-    markdownTemplateEngine: "njk",
+    markdownTemplateEngine: 'njk',
     dir: {
-      output: "dist",
-      input: "src",
-      includes: "_includes",
-      layouts: "_layouts"
+      input: 'src',
+      output: 'dist',
+      includes: '_includes',
+      layouts: '_layouts'
     }
   };
 }

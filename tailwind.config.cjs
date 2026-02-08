@@ -1,22 +1,11 @@
-/** @type {import('tailwindcss').Config} */
-const corePresetModule = require("@wcs-mn/eleventy-excellent-core/tailwind-preset");
-const corePreset = corePresetModule?.default ?? corePresetModule;
+/**
+ * Site Tailwind config.
+ *
+ * - Inherits the shared preset from @wcs-mn/eleventy-excellent-core
+ * - Keeps content globs site-scoped
+ */
 
 module.exports = {
-  presets: [corePreset],
-
-  content: [
-    "./src/**/*.{njk,md,html,webc,liquid,js,ts}",
-    "./node_modules/@wcs-mn/eleventy-excellent-core/src/**/*.{njk,md,html,webc,liquid,js,ts}"
-  ],
-
-  darkMode: "class",
-
-  theme: {
-    extend: {
-      // site-specific extensions go here
-    }
-  },
-
-  plugins: []
+  presets: [require('@wcs-mn/eleventy-excellent-core/tailwind-preset')],
+  content: ['./src/**/*.{njk,liquid,html,md,webc,js}']
 };
