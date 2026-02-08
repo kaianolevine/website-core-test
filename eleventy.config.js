@@ -11,6 +11,8 @@ const require = createRequire(import.meta.url);
 const corePkgJson = require.resolve("@wcs-mn/eleventy-excellent-core/package.json");
 const coreRoot = path.dirname(corePkgJson);
 const coreSrc = path.join(coreRoot, "src");
+const coreIncludesDir = path.join(coreSrc, "_includes");
+const coreLayoutsDir = path.join(coreSrc, "_layouts");
 
 export default async function (eleventyConfig) {
   // Mount shared core (registers shared plugins/filters/shortcodes/build pipeline)
@@ -26,8 +28,8 @@ export default async function (eleventyConfig) {
   const includePaths = [
     path.join(siteSrc, "_includes"),
     path.join(siteSrc, "_layouts"),
-    path.join(coreSrc, "_includes"),
-    path.join(coreSrc, "_layouts")
+    coreIncludesDir,
+    coreLayoutsDir
   ];
 
   // Nunjucks + Liquid fallbacks
@@ -48,7 +50,8 @@ export default async function (eleventyConfig) {
       output: "dist",
       input: "src",
       includes: "_includes",
-      layouts: "_layouts"
+      // Layout resolution must include core layouts; site layouts can still override via Nunjucks/Liquid includePaths.
+      layouts: coreLayoutsDir
     }
   };
 }
