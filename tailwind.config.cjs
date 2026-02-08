@@ -1,8 +1,9 @@
 /** @type {import('tailwindcss').Config} */
+const corePresetModule = require("@wcs-mn/eleventy-excellent-core/tailwind-preset");
+const corePreset = corePresetModule?.default ?? corePresetModule;
+
 module.exports = {
-  presets: [
-    require("@wcs-mn/eleventy-excellent-core/tailwind-preset")
-  ],
+  presets: [corePreset],
 
   content: [
     "./src/**/*.{njk,md,html,webc,liquid,js,ts}",
