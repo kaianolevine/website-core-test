@@ -1,10 +1,11 @@
-/** @type {import('tailwindcss').Config} */
+/ ** @type {import('tailwindcss').Config} */
 module.exports = {
-  // IMPORTANT: include both the site + the core package templates/components
   content: [
-    "./src/**/*.{njk,md,html,webc,js,ts}",
-    "./node_modules/@wcs-mn/eleventy-excellent-core/src/**/*.{njk,md,html,webc,js,ts}"
+    "./src/**/*.{njk,md,html,webc,liquid,js,ts}",
+    "./node_modules/@wcs-mn/eleventy-excellent-core/src/**/*.{njk,md,html,webc,liquid,js,ts}"
   ],
+
+  darkMode: "class",
 
   theme: {
     extend: {
