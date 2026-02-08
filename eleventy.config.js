@@ -50,8 +50,7 @@ export default async function (eleventyConfig) {
       output: "dist",
       input: "src",
       includes: "_includes",
-      // Layout resolution must include core layouts; site layouts can still override via Nunjucks/Liquid includePaths.
-      layouts: coreLayoutsDir
+      layouts: "_layouts"
     }
   };
 }
