@@ -1,9 +1,9 @@
-import corePreset from "@wcs-mn/ee-core/tailwind-config";
+import corePreset from "@wcs-mn/ee-core/tailwind-preset";
 
 export default {
-  ...corePreset,
+  presets: [corePreset],
   content: [
-    "./src/**/*.{html,js,md,njk,liquid,webc}",
-    "./node_modules/@wcs-mn/ee-core/src/**/*.{html,js,md,njk,liquid,webc}"
+    "./src/**/*.{njk,md,html,liquid}",
+    "./node_modules/@wcs-mn/ee-core/src/**/*.{njk,md,html,liquid,webc}"
   ]
 };
