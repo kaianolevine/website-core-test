@@ -8,6 +8,6 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.0",
-    "@wcs-mn/ee-core": "github:wcs-mn/eleventy-excellent-core#v0.1.1"
+    "@wcs-mn/ee-core": "github:wcs-mn/eleventy-excellent-core#v0.1.13"
   }
 }
