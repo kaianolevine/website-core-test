@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.0",
-    "@wcs-mn/ee-core": "github:REPLACE_WITH_YOUR_GITHUB_OR_NPM_REF"
+    "@wcs-mn/ee-core": "github:wcs-mn/eleventy-excellent-core#main"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",
