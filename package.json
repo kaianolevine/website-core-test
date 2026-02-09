@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build:css": "postcss ./node_modules/@wcs-mn/eleventy-excellent-core/src/assets/css/global/global.css -o ./src/assets/css/global.css",
+    "build:css": "postcss ./node_modules/@wcs-mn/ee-core/src/assets/css/global/global.css -o ./src/assets/css/global.css",
     "build": "npm run build:css && eleventy",
     "start": "npm run build:css && eleventy --serve",
     "clean": "rm -rf dist src/assets/css/global.css"
